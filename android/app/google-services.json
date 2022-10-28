@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "1036070121059",
+    "project_id": "healthifyme-91292",
+    "storage_bucket": "healthifyme-91292.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1036070121059:android:9b2234f95b27d2e7b29256",
+        "android_client_info": {
+          "package_name": "com.example.flutter_auth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1036070121059-f32pbbjfblb87dt3a1hptj55ps538op0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiI9qg__a7ks8PnB1GOJBDEt0JH9UJ4xE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1036070121059-f32pbbjfblb87dt3a1hptj55ps538op0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1036070121059:android:ae101dba220c1bb3b29256",
+        "android_client_info": {
+          "package_name": "com.example.healthifyme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1036070121059-f32pbbjfblb87dt3a1hptj55ps538op0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiI9qg__a7ks8PnB1GOJBDEt0JH9UJ4xE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1036070121059-f32pbbjfblb87dt3a1hptj55ps538op0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
