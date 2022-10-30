@@ -1,10 +1,8 @@
 //@dart=2.9
 import 'package:firebase_auth/firebase_auth.dart';
-import 'rounded_button.dart';
+import '../widgets/rounded_button.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:flutter/material.dart';
-
-//code for designing the UI of our text field where the user writes his email id or password
 
 const kTextFieldDecoration = InputDecoration(
     hintText: 'Enter a value',
@@ -36,6 +34,18 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Healthify Me',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+          ),
+          textAlign: TextAlign.center,
+        ),
+        centerTitle: true,
+        backgroundColor: Color(0xFF396AFC),
+      ),
       backgroundColor: Color(0xFF292C33),
       body: ModalProgressHUD(
         inAsyncCall: showSpinner,
