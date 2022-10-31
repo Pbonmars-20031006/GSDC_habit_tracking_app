@@ -14,7 +14,6 @@ class CustomCard extends StatefulWidget {
     this.carddetails,
     required this.onClickedDone,
   }) : super(key: key);
-  //TextEditingController _widgetname = new TextEditingController();
 
   @override
   _CustomCardState createState() => _CustomCardState();
@@ -23,7 +22,7 @@ class CustomCard extends StatefulWidget {
 class _CustomCardState extends State<CustomCard> {
   final formkey = GlobalKey<FormState>();
   final widget_namecontroller = TextEditingController();
-
+  //final timer_controller = TextInputType.number;
   @override
   void initState() {
     super.initState();
@@ -32,6 +31,7 @@ class _CustomCardState extends State<CustomCard> {
       final carddetails = widget.carddetails!;
 
       widget_namecontroller.text = carddetails.widget_name;
+      //
     }
   }
 

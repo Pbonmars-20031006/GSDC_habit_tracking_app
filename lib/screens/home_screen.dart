@@ -9,6 +9,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import '../widgets/rounded_button.dart';
 import 'package:hive/hive.dart';
 import '../hive_models/boxes.dart';
+import 'timer.dart';
 
 User loggedinUser;
 
@@ -34,9 +35,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(
-        child: ListView(),
-      ),
       backgroundColor: Color(0xFF292C33),
       appBar: AppBar(
         title: Text(
@@ -67,6 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
             onClickedDone: addTransaction,
           ),
         ),
+        tooltip: 'Click to add a habit',
       ),
     );
   }
@@ -88,7 +87,6 @@ class _HomeScreenState extends State<HomeScreen> {
     BuildContext context,
     cardetails cardAt,
   ) {
-    int tempcount = cardAt.count;
     return Card(
       color: Colors.white,
       child: Container(
@@ -118,7 +116,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           children: [
             Text(
-              '${cardAt.count}',
+              'Your Current Count is ${cardAt.count}',
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
@@ -193,17 +191,33 @@ class _HomeScreenState extends State<HomeScreen> {
           onPressed: () => countDown(cardAt),
         )),
         Expanded(
-            child: TextButton.icon(
-          label: Text(
-            '',
-            style: TextStyle(fontSize: 15, color: Colors.white),
+          child: TextButton.icon(
+            label: Text(
+              '',
+              style: TextStyle(fontSize: 15, color: Colors.white),
+            ),
+            icon: Icon(
+              Icons.timer_3_select,
+              color: Colors.white,
+            ),
+            onPressed: () => createTimer(cardAt),
           ),
-          icon: Icon(
-            Icons.timer_3_select,
-            color: Colors.white,
+        ),
+        Expanded(
+          child: TextButton.icon(
+            label: Text(
+              '',
+              style: TextStyle(fontSize: 15, color: Colors.white),
+            ),
+            icon: Icon(
+              Icons.auto_graph_outlined,
+              color: Colors.white,
+            ),
+            onPressed: () {
+              //Navigator.push(context, route)
+            },
           ),
-          onPressed: () => countDown(cardAt),
-        )),
+        ),
       ],
     );
   }
@@ -247,9 +261,12 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void countUp(cardetails cardAt) {
+    final now = DateTime.now();
     cardAt.count++;
     setState(() {});
+    //cardAt.dayTime.add(DateTime.now());
 
+    print(now);
     cardAt.save();
   }
 
@@ -258,5 +275,12 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {});
 
     cardAt.save();
+  }
+
+  void createTimer(cardetails cardAT) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => timer()),
+    );
   }
 }
