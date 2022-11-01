@@ -1,16 +1,27 @@
-# flutter_auth
+# Healthify.me
 
-A new Flutter project.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+# A project develope for the iris-codein 107 project
+# List implemented freatures
+# a. Authentication using Firebase(email) as well as a signup screen for new users has only been inplemeted for Android users
+# b. Custom cards that can be created by user regarding their habits, whose count can be manually be incremented as well as decremneted.
+# c. options to delete and edit previously created cards
+# d. Local database for storing the names as well as counts and various other features using Hive.
+# e. A fixed option to run a timer fro 10mins to implement the habitd
+# f. Minor design features have been implented to give the app a subtle look
+#
+#
+# List Non implented features
+# a. Screen to display Statistics
+# b. Local backup
+# c. Bloc formt for coding
 
-A few resources to get you started if this is your first Flutter project:
+# Refrences used 
+# a. pub.dev
+# b. medium.com
+# c. logrocket.com
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Platform used for developing macOS
+

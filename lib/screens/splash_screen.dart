@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/widgets/rounded_button.dart';
 import 'home_screen.dart';
 import 'welcome_screen.dart';
 
+// ignore: camel_case_types
 class spalsh_screen extends StatefulWidget {
-  const spalsh_screen({super.key});
+  const spalsh_screen({key}); //super.key
 
   @override
   State<spalsh_screen> createState() => _spalsh_screenState();
@@ -61,27 +63,16 @@ class _spalsh_screenState extends State<spalsh_screen> {
                 child: Padding(
                   padding: EdgeInsets.fromLTRB(20, 100, 20, 0),
                   child: Center(
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => WelcomeScreen()),
-                        );
-                      },
-                      child: Center(
-                        child: Text(
-                          'Hop On',
-                          style: TextStyle(
-                            fontSize: 20,
-                            letterSpacing: 0.5,
-                            fontFamily: 'PlayfairDisplay',
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                      style: ElevatedButton.styleFrom(primary: Colors.purple),
-                    ),
+                    child: RoundedButton(
+                        title: 'Hop On',
+                        colour: Color(0xFF396AFC),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => WelcomeScreen()),
+                          );
+                        }),
                   ),
                 ),
               ),

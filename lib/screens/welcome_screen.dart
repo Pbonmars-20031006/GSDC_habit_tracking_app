@@ -1,6 +1,6 @@
 //@dart=2.9
 import 'package:flutter/material.dart';
-import 'rounded_button.dart';
+import '../widgets/rounded_button.dart';
 
 class WelcomeScreen extends StatefulWidget {
   @override
@@ -12,30 +12,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFF292C33),
-      // backgroundColor: Colors.white,
-      // body: Padding(
-      //   padding: EdgeInsets.symmetric(horizontal: 24.0),
-      //   child: Column(
-      //       mainAxisAlignment: MainAxisAlignment.center,
-      //       crossAxisAlignment: CrossAxisAlignment.stretch,
-      //       children: <Widget>[
-      //         RoundedButton(
-      //           colour: Colors.lightBlueAccent,
-      //           title: 'Log In',
-      //           onPressed: () {
-      //             Navigator.pushNamed(context, 'login_screen');
-      //           },
-      //         ),
-      //         RoundedButton(
-      //             colour: Colors.blueAccent,
-      //             title: 'Register',
-      //             onPressed: () {
-      //               Navigator.pushNamed(context, 'registration_screen');
-      //             }),
-      //       ]),
-      // )
       appBar: AppBar(
-        backgroundColor: Colors.purple,
+        backgroundColor: Color(0xFF396AFC),
       ),
       body: Container(
         child: Align(
@@ -44,15 +22,21 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               Container(
                 padding: EdgeInsets.fromLTRB(20, 100, 0, 0),
                 width: double.infinity,
-                child: Text(
-                  'Lets get Started!!',
-                  style: TextStyle(
-                      fontSize: 40,
-                      letterSpacing: 0.5,
-                      fontFamily: 'PlayfairDisplay',
-                      color: Colors.white),
-                  textAlign: TextAlign.left,
+                child: Center(
+                  child: Text(
+                    'Lets get Started!!',
+                    style: TextStyle(
+                        fontSize: 40,
+                        letterSpacing: 0.5,
+                        fontFamily: 'PlayfairDisplay',
+                        color: Colors.white),
+                    textAlign: TextAlign.left,
+                  ),
                 ),
+              ),
+              SizedBox(
+                width: double.infinity,
+                height: 100,
               ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 24.0),
@@ -61,14 +45,14 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
                       RoundedButton(
-                        colour: Colors.purple,
+                        colour: Colors.black,
                         title: 'Log In',
                         onPressed: () {
                           Navigator.pushNamed(context, 'login_screen');
                         },
                       ),
                       RoundedButton(
-                          colour: Colors.purple,
+                          colour: Colors.black,
                           title: 'Register',
                           onPressed: () {
                             Navigator.pushNamed(context, 'registration_screen');

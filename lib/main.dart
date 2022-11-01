@@ -1,18 +1,22 @@
 //@dart=2.9
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'welcome_screen.dart';
-import 'home_screen.dart';
-import 'signup_screen.dart';
-import 'login_screen.dart';
-import 'splash_screen.dart';
+import 'screens/welcome_screen.dart';
+import 'screens/home_screen.dart';
+import 'screens/signup_screen.dart';
+import 'screens/login_screen.dart';
+import 'screens/splash_screen.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'hive_models/carddetails.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   await Hive.initFlutter();
+  Hive.registerAdapter(cardetailsAdapter());
+
+  await Hive.openBox<cardetails>('carddetails');
   runApp(MyApp());
 }
 

@@ -2,9 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
-import 'rounded_button.dart';
-
-//code for designing the UI of our text field where the user writes his email id or password
+import '../widgets/rounded_button.dart';
 
 const kTextFieldDecoration = InputDecoration(
   hintText: 'Enter a value',
@@ -36,6 +34,18 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Healthify Me',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+          ),
+          textAlign: TextAlign.center,
+        ),
+        centerTitle: true,
+        backgroundColor: Color(0xFF396AFC),
+      ),
       backgroundColor: Color(0xFF292C33),
       body: ModalProgressHUD(
         inAsyncCall: showSpinner,
@@ -52,6 +62,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     email = value;
                     //Do something with the user input.
                   },
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                  cursorColor: Colors.white,
                   decoration: kTextFieldDecoration.copyWith(
                       hintText: 'Enter your email')),
               SizedBox(
@@ -64,6 +78,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     password = value;
                     //Do something with the user input.
                   },
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                  cursorColor: Colors.white,
                   decoration: kTextFieldDecoration.copyWith(
                       hintText: 'Enter your Password')),
               SizedBox(
