@@ -56,15 +56,20 @@ class _LoginScreenState extends State<LoginScreen> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               TextField(
-                  keyboardType: TextInputType.emailAddress,
-                  textAlign: TextAlign.center,
-                  onChanged: (value) {
-                    email = value;
-                    //Do something with the user input.
-                  },
-                  decoration: kTextFieldDecoration.copyWith(
-                    hintText: 'Enter your email',
-                  )),
+                keyboardType: TextInputType.emailAddress,
+                textAlign: TextAlign.center,
+                onChanged: (value) {
+                  email = value;
+                  //Do something with the user input.
+                },
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+                decoration: kTextFieldDecoration.copyWith(
+                  hintText: 'Enter your email',
+                ),
+                cursorColor: Colors.white,
+              ),
               SizedBox(
                 height: 8.0,
               ),
@@ -75,6 +80,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     password = value;
                     //Do something with the user input.
                   },
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                  cursorColor: Colors.white,
                   decoration: kTextFieldDecoration.copyWith(
                       hintText: 'Enter your password.')),
               SizedBox(

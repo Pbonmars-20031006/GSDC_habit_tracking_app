@@ -1,18 +1,22 @@
+//@dart=2.9
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:flutter_auth/hive_models/carddetails.dart';
+import 'package:flutter_auth/screens/home_screen.dart';
 import '../widgets/button_widget.dart';
 
 class timer extends StatefulWidget {
+  final int count;
+  const timer({Key key, @required this.count}) : super(key: key);
   @override
   _timerState createState() => _timerState();
 }
 
 class _timerState extends State<timer> {
-  static const countdownDuration = Duration(minutes: 10);
+  static const countdownDuration = Duration(seconds: 60);
   Duration duration = Duration();
-  Timer? timer;
-
+  Timer timer;
+  //int count=count;
   bool countDown = true;
 
   @override
@@ -47,17 +51,25 @@ class _timerState extends State<timer> {
   }
 
   void stopTimer({bool resets = true}) {
+    int count = widget.count;
+    //int count) {
     if (resets) {
       reset();
     }
+    count++;
+    //widget.count = count;
+    //count++;
     setState(() => timer?.cancel());
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => HomeScreen()),
+    );
   }
 
   @override
   Widget build(BuildContext context) => Scaffold(
         backgroundColor: Color(0xFF292C33),
         appBar: AppBar(
-          automaticallyImplyLeading: false,
           title: Text(
             "Timer",
             style: TextStyle(
@@ -101,7 +113,7 @@ class _timerState extends State<timer> {
     ]);
   }
 
-  Widget buildTimeCard({required String time, required String header}) =>
+  Widget buildTimeCard({@required String time, @required String header}) =>
       Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -126,7 +138,7 @@ class _timerState extends State<timer> {
       );
 
   Widget buildButtons() {
-    final isRunning = timer == null ? false : timer!.isActive;
+    final isRunning = timer == null ? false : timer.isActive;
     final isCompleted = duration.inSeconds == 0;
     return isRunning || isCompleted
         ? Row(
@@ -136,7 +148,9 @@ class _timerState extends State<timer> {
                   text: 'STOP',
                   onClicked: () {
                     if (isRunning) {
-                      stopTimer(resets: false);
+                      stopTimer(
+                        resets: false,
+                      ); //count);
                     }
                   }),
               SizedBox(

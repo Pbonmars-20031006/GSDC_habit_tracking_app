@@ -62,6 +62,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     email = value;
                     //Do something with the user input.
                   },
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                  cursorColor: Colors.white,
                   decoration: kTextFieldDecoration.copyWith(
                       hintText: 'Enter your email')),
               SizedBox(
@@ -74,6 +78,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     password = value;
                     //Do something with the user input.
                   },
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                  cursorColor: Colors.white,
                   decoration: kTextFieldDecoration.copyWith(
                       hintText: 'Enter your Password')),
               SizedBox(

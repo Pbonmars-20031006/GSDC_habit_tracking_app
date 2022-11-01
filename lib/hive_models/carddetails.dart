@@ -14,5 +14,8 @@ class cardetails extends HiveObject {
   late double timer;
 
   @HiveField(3)
-  late List<DateTime> dayTime;
+  late List<String> dayTime;
+
+  @HiveField(4)
+  late List<String> date;
 }

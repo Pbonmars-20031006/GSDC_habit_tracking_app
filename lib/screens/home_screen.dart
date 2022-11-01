@@ -1,8 +1,10 @@
 //@dart=2.9
+import 'dart:core';
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_auth/screens/statistics_screen.dart';
 import 'package:flutter_auth/widgets/CustomCard.dart';
 import 'package:flutter_auth/hive_models/carddetails.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -10,6 +12,7 @@ import '../widgets/rounded_button.dart';
 import 'package:hive/hive.dart';
 import '../hive_models/boxes.dart';
 import 'timer.dart';
+import 'statistics_screen.dart';
 
 User loggedinUser;
 
@@ -214,7 +217,11 @@ class _HomeScreenState extends State<HomeScreen> {
               color: Colors.white,
             ),
             onPressed: () {
-              //Navigator.push(context, route)
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => StatsScreen(
+                          name: cardAt.widget_name, count: cardAt.count)));
             },
           ),
         ),
@@ -261,12 +268,14 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void countUp(cardetails cardAt) {
-    final now = DateTime.now();
+    DateTime day = DateTime.now();
+    String date = day.toString().substring(0, 10);
     cardAt.count++;
     setState(() {});
-    //cardAt.dayTime.add(DateTime.now());
-
-    print(now);
+    cardAt.date.add(date);
+    String x = cardAt.date[0];
+    print(x);
+    print(cardAt.widget_name);
     cardAt.save();
   }
 
@@ -280,7 +289,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void createTimer(cardetails cardAT) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => timer()),
+      MaterialPageRoute(builder: (context) => timer(count: cardAT.count)),
     );
   }
 }
